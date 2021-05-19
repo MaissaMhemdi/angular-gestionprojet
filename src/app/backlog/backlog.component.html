@@ -1,0 +1,171 @@
+<div class="container">
+  
+    <body>
+      <div class="area"></div><nav class="main-menu">
+        <ul>
+            <li>
+                <a href="http://justinfarrow.com">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">
+                        Dashboard
+                    </span>
+                </a>
+              
+            </li>
+            <li class="has-subnav">
+                <a href="/profile">
+                    <i class="fa fa-laptop fa-2x"></i>
+                    <span class="nav-text">
+                        Profile
+                    </span>
+                </a>
+                
+            </li>
+          
+            <li class="has-subnav">
+                <a href="/projet">
+                   <i class="fa fa-folder-open fa-2x"></i>
+                    <span class="nav-text">
+                        Projets
+                    </span>
+                </a>
+               
+            </li>
+            <li class="has-subnav">
+                <a href="#">
+                   <i class="fa fa-list fa-2x"></i>
+                    <span class="nav-text">
+                        Backlog Produit
+                    </span>
+                </a>
+                
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-bar-chart-o fa-2x"></i>
+                    <span class="nav-text">
+                       Sprint
+                    </span>
+                </a>
+            </li>
+           
+            <li>
+               <a href="#">
+                   <i class="fa fa-table fa-2x"></i>
+                    <span class="nav-text">
+                        Taches
+                    </span>
+                </a>
+            </li>
+            <li>
+              <a href="#">
+                   <i class="fa fa-user fa-2x"></i>
+                   <span class="nav-text">
+                       Membres
+                   </span>
+               </a>
+           </li>    
+    </ul>
+    <ul class="logout">
+        <li>
+           <a href="" (click)="logout()">
+                 <i class="fa fa-power-off fa-2x"></i>
+                <span class="nav-text">
+                    Logout
+                </span>
+            </a>
+        </li>  
+    </ul>
+    </nav>
+    </body>
+    </div>
+  
+   
+  
+  <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="container-fluid mt--7">
+          <div class="row">
+            
+            <div class="col-xl-8 order-xl-1" style="border-top-width: 48px">
+              <div class="card bg-secondary shadow">
+                <div class="card-header bg-white border-0">
+                  <div class="row align-items-center">
+                    <div class="col-8">
+                      <h3 class="mb-0">My Backlog</h3>
+                      <br>
+                    </div>
+                  </div>
+                  <div class="box">
+                    <a class="button" href="/backlog#popup1" >User story</a>
+                   
+                  </div>
+                  <div class="box">
+                  <a class="button" href="/backlog/sprint#popup1" >sprint</a>
+                  </div>
+                  <div id="popup1" class="overlay">
+                    <div class="popup">
+                      <h2>user story</h2>
+                      <a class="close" href="/backlog">&times;</a>
+                      <div class="content">
+                        <form #loginform="ngForm" (ngSubmit)="ajouterTache()">
+                            <small class="txt-danger">{{msg}}</small>
+                          
+                          <input type="text" name="title" class="title form-control"  placeholder="Title"  [(ngModel)]="tache.title"/>
+                          <input type="text" name="description" class="password form-control" placeholder="description" [(ngModel)]="tache.description" />
+                          <input type="date" name="datedebut" class="password form-control" placeholder="date debut"  [(ngModel)]="tache.datedebut" />
+                          <input type="date" name="datefin" class="password form-control" placeholder="date fin" [(ngModel)]="tache.datefin" />
+                          <input class="btn tache" type="submit" value="create" />
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-primary">
+                    <div class="card-body">
+                      <div class="pl-lg-4" >
+                        <div class="row">
+                          <div class="col-lg-10">
+                        <table class="table table-striped" >
+                          <thead>
+                            <tr>
+                              <th>Title</th>
+                          
+                              <th></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let backlog of backlogs | async ">
+                           <td>{{backlog.name}}</td>
+                            
+                              <td> 
+                              
+                              <ul class="list-inline m-0">
+                               
+                                <li class="list-inline-item">
+                                    <button  class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit" style="font-size:18px"></i></button>
+                                    <button class="btn btn-danger btn-sm rounded-0" title="Delete"><i class="fa fa-trash-o" style="font-size:18px"></i></button>
+                         
+                                  
+                                 
+                                  </li>
+                                
+                              
+                            </ul>
+                            </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </div></div>
+                      </div>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+             </div>
+             </div>
+             </div>
+           

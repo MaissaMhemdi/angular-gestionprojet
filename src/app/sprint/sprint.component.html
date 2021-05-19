@@ -1,0 +1,23 @@
+
+               
+                  
+                  <div id="popup1" class="overlay">
+                    <div class="popup">
+                      <h2>user story</h2>
+                      <a class="close" href="/backlog">&times;</a>
+                      <div class="content">
+                        <form #loginform="ngForm" (ngSubmit)="ajouterSprint()">
+                            <small class="txt-danger">{{msg}}</small>
+                          
+                          <input type="text" name="Nom" class="title form-control"  placeholder="Nom"  [(ngModel)]="sprint.nomSprint"/>
+                          <input type="text" name="description" class="password form-control" placeholder="description" [(ngModel)]="sprint.descriptionSprint" />
+                          <input type="text" name="complexite" class="title form-control"  placeholder="complexite"  [(ngModel)]="sprint.complexite"/>
+                          <input type="text" name="estimation" class="title form-control"  placeholder="estimation"  [(ngModel)]="sprint.estimation"/>
+
+                          <input type="date" name="datedebut" class="password form-control" placeholder="date debut"  [(ngModel)]="sprint.dateDebut" />
+                          <input type="date" name="datefin" class="password form-control" placeholder="date fin" [(ngModel)]="sprint.dateFin" />
+                          <input class="btn tache" type="submit" value="create" />
+                        </form>
+                      </div>
+                    </div>
+                  </div>

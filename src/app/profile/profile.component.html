@@ -1,0 +1,130 @@
+<div class="container">
+
+    <body>
+        <div class="area"></div><nav class="main-menu">
+          <ul>
+              <li>
+                  <a href="http://justinfarrow.com">
+                      <i class="fa fa-home fa-2x"></i>
+                      <span class="nav-text">
+                          Dashboard
+                      </span>
+                  </a>
+                
+              </li>
+              <li class="has-subnav">
+                  <a href="/profile">
+                      <i class="fa fa-laptop fa-2x"></i>
+                      <span class="nav-text">
+                          Profile
+                      </span>
+                  </a>
+                  
+              </li>
+            
+              <li class="has-subnav">
+                  <a href="/projet">
+                     <i class="fa fa-folder-open fa-2x"></i>
+                      <span class="nav-text">
+                          Projets
+                      </span>
+                  </a>
+                 
+              </li>
+              <li class="has-subnav">
+                  <a href="#">
+                     <i class="fa fa-list fa-2x"></i>
+                      <span class="nav-text">
+                          Backlog Produit
+                      </span>
+                  </a>
+                  
+              </li>
+              <li>
+                  <a href="#">
+                      <i class="fa fa-bar-chart-o fa-2x"></i>
+                      <span class="nav-text">
+                         Sprint
+                      </span>
+                  </a>
+              </li>
+             
+              <li>
+                 <a href="#">
+                     <i class="fa fa-table fa-2x"></i>
+                      <span class="nav-text">
+                          Taches
+                      </span>
+                  </a>
+              </li>
+              <li>
+                <a href="#">
+                     <i class="fa fa-user fa-2x"></i>
+                     <span class="nav-text">
+                         Membres
+                     </span>
+                 </a>
+             </li>
+      </ul>
+      <ul class="logout">
+          <li>
+             <a href="" (click)="logout()">
+                   <i class="fa fa-power-off fa-2x"></i>
+                  <span class="nav-text">
+                      Logout
+                  </span>
+              </a>
+          </li>  
+      </ul>
+  </nav>
+  </body>
+</div>
+
+
+
+<div class="container" *ngIf="currentUser; else loggedOut">
+
+      <div class="col-md-12">
+        <div class="card card-container">
+         <h3> <strong>Profile</strong></h3>
+          <br> 
+          <img
+            id="profile-img"
+            src="{{ currentUser.image }}" accept="image/*" class="profile-img-card"/>
+        {{ currentUser.email }}
+           
+
+    <div>
+
+    <h3>
+     
+     <strong>{{ currentUser.username }}</strong>
+    </h3>
+   
+  </div>
+       
+<br>
+ 
+  <p>
+    <strong>Token:</strong>
+    {{ currentUser.accessToken.substring(0, 20) }} ...
+    {{ currentUser.accessToken.substr(currentUser.accessToken.length - 20) }}
+  </p>
+  <p>
+    <strong>Email:</strong>
+    {{currentUser.image}}
+  </p>
+ 
+ 
+  <strong>Roles:</strong>
+  <ul>
+    <li *ngFor="let role of currentUser.roles">
+      {{ role }}
+    </li>
+  </ul>
+</div>
+
+</div></div>
+<ng-template #loggedOut>
+  Please login.
+</ng-template>

@@ -1,0 +1,148 @@
+<div class="container">
+  
+  <body>
+    <div class="area"></div><nav class="main-menu">
+      <ul>
+          <li>
+              <a href="http://justinfarrow.com">
+                  <i class="fa fa-home fa-2x"></i>
+                  <span class="nav-text">
+                      Dashboard
+                  </span>
+              </a>
+            
+          </li>
+          <li class="has-subnav">
+              <a href="/profile">
+                  <i class="fa fa-laptop fa-2x"></i>
+                  <span class="nav-text">
+                      Profile
+                  </span>
+              </a>
+              
+          </li>
+        
+          <li class="has-subnav">
+              <a href="/projet">
+                 <i class="fa fa-folder-open fa-2x"></i>
+                  <span class="nav-text">
+                      Projets
+                  </span>
+              </a>
+             
+          </li>
+          <li class="has-subnav">
+              <a href="#">
+                 <i class="fa fa-list fa-2x"></i>
+                  <span class="nav-text">
+                      Backlog Produit
+                  </span>
+              </a>
+              
+          </li>
+          <li>
+              <a href="#">
+                  <i class="fa fa-bar-chart-o fa-2x"></i>
+                  <span class="nav-text">
+                     Sprint
+                  </span>
+              </a>
+          </li>
+         
+          <li>
+             <a href="#">
+                 <i class="fa fa-table fa-2x"></i>
+                  <span class="nav-text">
+                      Taches
+                  </span>
+              </a>
+          </li>
+          <li>
+            <a href="#">
+                 <i class="fa fa-user fa-2x"></i>
+                 <span class="nav-text">
+                     Membres
+                 </span>
+             </a>
+         </li>    
+  </ul>
+  <ul class="logout">
+      <li>
+         <a href="" (click)="logout()">
+               <i class="fa fa-power-off fa-2x"></i>
+              <span class="nav-text">
+                  Logout
+              </span>
+          </a>
+      </li>  
+  </ul>
+  </nav>
+  </body>
+  </div>
+
+ 
+
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="container-fluid mt--7">
+        <div class="row">
+          
+          <div class="col-xl-8 order-xl-1" style="border-top-width: 48px">
+            <div class="card bg-secondary shadow">
+              <div class="card-header bg-white border-0">
+                <div class="row align-items-center">
+                  <div class="col-8">
+                    <h3 class="mb-0">My List Projects</h3>
+                    <br>
+                  </div>
+                </div>
+                <button [routerLink]="['/ajouteprojet']" class="btn btn-info" style="margin-left: 10px">Ajouter</button>
+              </div>
+<div class="panel panel-primary">
+  <div class="card-body">
+    <div class="pl-lg-4" >
+      <div class="row">
+        <div class="col-lg-10">
+      <table class="table table-striped" >
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>DateDebut</th>
+            <th>DateFin</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let projet of projets | async ">
+            <a (click)="getbacklog(projet.id)"><td>{{projet.title}}</td></a>
+            <td>{{projet.description}}</td>
+            <td>{{projet.dateDebut}}</td>
+            <td>{{projet.dateFin}}</td>
+            <td> 
+            
+            <ul class="list-inline m-0">
+             
+              <li class="list-inline-item">
+                  <button (click)="updateProjet(projet.id)" class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit" style="font-size:18px"></i></button>
+                  <button (click)="deleteProjet(projet.id)" class="btn btn-danger btn-sm rounded-0" title="Delete"><i class="fa fa-trash-o" style="font-size:18px"></i></button>
+       
+                
+               
+                </li>
+              
+            
+          </ul>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+      </div></div>
+    </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+</div>

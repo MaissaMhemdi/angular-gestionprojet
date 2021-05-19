@@ -1,0 +1,108 @@
+<body>
+  <div class="area"></div><nav class="main-menu">
+    <ul>
+        <li>
+            <a href="http://justinfarrow.com">
+                <i class="fa fa-home fa-2x"></i>
+                <span class="nav-text">
+                    Dashboard
+                </span>
+            </a>
+          
+        </li>
+        <li class="has-subnav">
+            <a href="/profile">
+                <i class="fa fa-laptop fa-2x"></i>
+                <span class="nav-text">
+                    Profile
+                </span>
+            </a>
+            
+        </li>
+      
+        <li class="has-subnav">
+            <a href="/projet">
+               <i class="fa fa-folder-open fa-2x"></i>
+                <span class="nav-text">
+                    Projets
+                </span>
+            </a>
+           
+        </li>
+        <li class="has-subnav">
+            <a href="#">
+               <i class="fa fa-list fa-2x"></i>
+                <span class="nav-text">
+                    Backlog Produit
+                </span>
+            </a>
+            
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-bar-chart-o fa-2x"></i>
+                <span class="nav-text">
+                   Sprint
+                </span>
+            </a>
+        </li>
+       
+        <li>
+           <a href="#">
+               <i class="fa fa-table fa-2x"></i>
+                <span class="nav-text">
+                    Taches
+                </span>
+            </a>
+        </li>
+        <li>
+          <a href="#">
+               <i class="fa fa-user fa-2x"></i>
+               <span class="nav-text">
+                   Membres
+               </span>
+           </a>
+       </li>
+</ul>
+<ul class="logout">
+    <li>
+       <a href="" (click)="logout()">
+             <i class="fa fa-power-off fa-2x"></i>
+            <span class="nav-text">
+                Logout
+            </span>
+        </a>
+    </li>  
+</ul>
+</nav>
+</body>
+
+
+
+
+<div class="col-md-12">
+    <div class="card card-container">
+      <h3>Ajouter des membres:</h3>
+      <form name="form"  #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <small>{{msg}}</small>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" value="email" [(ngModel)]="email" required email/>
+        
+        </div>
+        <div class="form-group">
+          <label for="text">Text</label>
+          <textarea rows="5" class="form-control" name="text" value="text"  [(ngModel)]="text">
+          </textarea>
+          </div> 
+          <div class="form-group">
+                <label for="NameProjet">NameProjet</label>
+                <input type="text" class="form-control" name="projectName" value="projectName"  [(ngModel)]="projectName" />
+            </div> 
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">Send</button>
+        </div>
+     
+      </form>
+    </div>
+</div>

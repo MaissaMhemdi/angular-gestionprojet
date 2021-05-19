@@ -1,0 +1,18 @@
+img {
+    vertical-align: middle;
+    border-style: none;
+    width: 30%;
+}
+
+.navbar-dark .navbar-brand {
+    color: #fff;
+    margin-left: -57px;
+}
+.navbar{
+background-color: black;
+}
+.container{
+    margin-left: 0px;
+    padding-left: 0px;
+
+}
